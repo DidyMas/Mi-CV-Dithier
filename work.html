@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="Slicebox - 3D Image Slider with Fallback" />
+    <meta name="keywords" content="jquery, css3, 3d, webkit, fallback, slider, css3, 3d transforms, slices, rotate, box, automatic" />
+    <meta name="author" content="Pedro Botelho for Codrops" />
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/slicebox.css" />
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+    <script type="text/javascript" src="js/modernizr.custom.46884.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/main.css">
+    <title>View My Work</title>
+</head>
+
+<body>
+  <header>
+    <div class="menu-btn">
+      <div class="btn-line"></div>
+      <div class="btn-line"></div>
+      <div class="btn-line"></div>
+    </div>
+
+    <nav class="menu">
+      <div class="menu-branding">
+        <div class="portrait"></div>
+      </div>
+      <ul class="menu-nav">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">
+            Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link">
+            About Me
+          </a>
+        </li>
+        <li class="nav-item current">
+          <a href="work.html" class="nav-link">
+            My Work
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">
+            How To Reach Me
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="work">
+      <h1 class="lg-heading">
+          My
+          <span class="text-secondary">Work</span>
+      </h1>
+      <h2 class="sm-heading">
+          Check out some of my projects...
+      </h2>
+      <!--Previo no funciona<div class="projects">
+      <div class="item">
+        <a href="#!">
+          <img src="img/projects/project1.jpg" alt="Project">
+        </a>
+        <a href="#" class="btn-light">
+          <i class="fas fa-eye"></i> Project
+        </a>
+        <a href="#" class="btn-dark">
+          <i class="fab fa-github"></i> Github
+        </a>
+      </div>
+      <div class="item">
+        <a href="#!">
+          <img src="img/projects/project2.jpg" alt="Project">
+        </a>
+        <a href="#" class="btn-light">
+          <i class="fas fa-eye"></i> Project
+        </a>
+        <a href="#" class="btn-dark">
+          <i class="fab fa-github"></i> Github
+        </a>
+      </div>
+      <div class="item">
+        <a href="#!">
+          <img src="img/projects/project3.jpg" alt="Project">
+        </a>
+        <a href="#" class="btn-light">
+          <i class="fas fa-eye"></i> Project
+        </a>
+        <a href="#" class="btn-dark">
+          <i class="fab fa-github"></i> Github
+        </a>
+      </div>
+      <div class="item">
+        <a href="#!">
+          <img src="img/projects/project4.jpg" alt="Project">
+        </a>
+        <a href="#" class="btn-light">
+          <i class="fas fa-eye"></i> Project
+        </a>
+        <a href="#" class="btn-dark">
+          <i class="fab fa-github"></i> Github
+        </a>
+      </div>
+      <div class="item">
+        <a href="#!">
+          <img src="img/projects/project5.jpg" alt="Project">
+        </a>
+        <a href="#" class="btn-light">
+          <i class="fas fa-eye"></i> Project
+        </a>
+        <a href="#" class="btn-dark">
+          <i class="fab fa-github"></i> Github
+        </a>
+      </div>
+    </div>-->
+
+      <div class="container">
+
+         <div class="wrapper">
+
+             <ul id="sb-slider" class="sb-slider">
+                 <li>
+                     <a href="http://www.goretail.mx/" target="_blank"><img src="images/1.jpg" alt="image1" /></a>
+                     <div class="sb-description">
+                         <h3>Primer proyecto</h3>
+                     </div>
+                 </li>
+                 <li>
+                     <a href="#" target="_blank"><img src="images/2.jpg" alt="image2" /></a>
+                     <div class="sb-description">
+                         <h3>Proyecto 2</h3>
+                     </div>
+                 </li>
+                 <li>
+                     <a href="#" target="_blank"><img src="images/3.jpg" alt="image1" /></a>
+                     <div class="sb-description">
+                         <h3>Responsivo</h3>
+                     </div>
+                 </li>
+                 <li>
+                     <a href="#" target="_blank"><img src="images/4.jpg" alt="image1" /></a>
+                     <div class="sb-description">
+                         <h3>Responsive mobile</h3>
+                     </div>
+                 </li>
+                 <li>
+                     <a href="#" target="_blank"><img src="images/5.jpg" alt="image1" /></a>
+                     <div class="sb-description">
+                         <h3>Dashboards QA</h3>
+                     </div>
+                 </li>
+                 <!--<li>
+        <a href="#" target="_blank"><img src="images/6.jpg" alt="image1" /></a>
+        <div class="sb-description">
+            <h3>Groundbreaking Artist</h3>
+        </div>
+    </li>
+    <li>
+        <a href="#" target="_blank"><img src="images/7.jpg" alt="image1" /></a>
+        <div class="sb-description">
+            <h3>Selfless Philantropist</h3>
+        </div>
+    </li>-->
+             </ul>
+
+              <div id="shadow" class="shadow"></div>
+
+              <div id="nav-arrows" class="nav-arrows">
+                  <a href="#">Next</a>
+                  <a href="#">Previous</a>
+              </div>
+
+              <div id="nav-dots" class="nav-dots">
+                  <span class="nav-dot-current"></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                 
+              </div>
+
+          </div><!-- /wrapper -->
+
+      </div>
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+      <script type="text/javascript" src="js/jquery.slicebox.js"></script>
+      <script type="text/javascript">
+          $(function () {
+
+              var Page = (function () {
+
+                  var $navArrows = $('#nav-arrows').hide(),
+                      $navDots = $('#nav-dots').hide(),
+                      $nav = $navDots.children('span'),
+                      $shadow = $('#shadow').hide(),
+                      slicebox = $('#sb-slider').slicebox({
+                          onReady: function () {
+
+                              $navArrows.show();
+                              $navDots.show();
+                              $shadow.show();
+
+                          },
+                          onBeforeChange: function (pos) {
+
+                              $nav.removeClass('nav-dot-current');
+                              $nav.eq(pos).addClass('nav-dot-current');
+
+                          }
+                      }),
+
+                      init = function () {
+
+                          initEvents();
+
+                      },
+                      initEvents = function () {
+
+                          // add navigation events
+                          $navArrows.children(':first').on('click', function () {
+
+                              slicebox.next();
+                              return false;
+
+                          });
+
+                          $navArrows.children(':last').on('click', function () {
+
+                              slicebox.previous();
+                              return false;
+
+                          });
+
+                          $nav.each(function (i) {
+
+                              $(this).on('click', function (event) {
+
+                                  var $dot = $(this);
+
+                                  if (!slicebox.isActive()) {
+
+                                      $nav.removeClass('nav-dot-current');
+                                      $dot.addClass('nav-dot-current');
+
+                                  }
+
+                                  slicebox.jump(i + 1);
+                                  return false;
+
+                              });
+
+                          });
+
+                      };
+
+                  return { init: init };
+
+              })();
+
+              Page.init();
+
+          });
+      </script>
+
+  </main>
+
+  <footer id="main-footer">
+    Copyright &copy; 2020
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
