@@ -14,67 +14,156 @@
 </head>
 
 <body id="bg-img">
-  <header>
-    <div class="menu-btn">
-      <div class="btn-line"></div>
-      <div class="btn-line"></div>
-      <div class="btn-line"></div>
+    <header>
+        <div class="menu-btn">
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+            <div class="btn-line"></div>
+        </div>
+
+        <nav class="menu">
+            <div class="menu-branding">
+                <div class="portrait"></div>
+            </div>
+            <ul class="menu-nav">
+                <li class="nav-item current">
+                    <a href="index.html" class="nav-link">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">
+                        About Me
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="work.html" class="nav-link">
+                        My Work
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">
+                        How To Reach Me
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="home">
+        <h1 class="lg-heading">
+            Dithier
+            <span class="text-secondary">Macias</span>
+        </h1>
+        <h2 class="sm-heading">
+            Web Developer, Programmer, Designer & Entrepreneur
+        </h2>
+        <div class="icons">
+            <a href="https://twitter.com/MaciasMon" target="_blank">
+                <i class="fab fa-twitter fa-2x"></i>
+            </a>
+            <a href="https://www.facebook.com/dithier.macias.7" target="_blank">
+                <i class="fab fa-facebook fa-2x"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/dydy-mas-macias-43b8b26a/" target="_blank">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="https://github.com/DidyMas" target="_blank">
+                <i class="fab fa-github fa-2x"></i>
+            </a>
+        </div>
+    </main>
+    <div class="Cuerp">
+        <h1 class="text123" style="margin-top:-16vh;">
+            <span>.</span>
+            <span>D</span>
+            <span>i</span>
+            <span>t</span>
+            <span>h</span>
+            <span>i</span>
+            <span>e</span>
+            <span>r</span>
+            <span>.</span>
+
+        </h1>
     </div>
 
-    <nav class="menu">
-      <div class="menu-branding">
-        <div class="portrait"></div>
-      </div>
-      <ul class="menu-nav">
-        <li class="nav-item current">
-          <a href="index.html" class="nav-link">
-            Home
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="about.html" class="nav-link">
-            About Me
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="work.html" class="nav-link">
-            My Work
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">
-            How To Reach Me
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+    <style>
+        .Cuerp {
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
 
-  <main id="home">
-    <h1 class="lg-heading">
-      Dithier
-      <span class="text-secondary">Macias</span>
-    </h1>
-    <h2 class="sm-heading">
-      Web Developer, Programmer, Designer & Entrepreneur
-    </h2>
-    <div class="icons">
-      <a href="https://twitter.com/MaciasMon" target="_blank">
-        <i class="fab fa-twitter fa-2x"></i>
-      </a>
-      <a href="https://www.facebook.com/dithier.macias.7" target="_blank">
-        <i class="fab fa-facebook fa-2x"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/dydy-mas-macias-43b8b26a/" target="_blank">
-        <i class="fab fa-linkedin fa-2x"></i>
-      </a>
-      <a href="https://github.com/DidyMas" target="_blank"> 
-        <i class="fab fa-github fa-2x"></i>
-      </a>
-    </div>
-  </main>
+        .text123 {
+            margin: auto;
+            padding: 0;
+            color: rgba(68, 68, 68, 0.58);
+            font-size: 34px;
+        }
 
-  <script src="js/main.js"></script>
+            .text123 span {
+                display: table-cell;
+                margin: 0;
+                padding: 0;
+                animation: animate 2s linear infinite;
+            }
+
+                .text123 span:nth-child(1) {
+                    animation-delay: 0s;
+                }
+
+                .text123 span:nth-child(2) {
+                    animation-delay: .25s;
+                }
+
+                .text123 span:nth-child(3) {
+                    animation-delay: .5s;
+                }
+
+                .text123 span:nth-child(4) {
+                    animation-delay: .75s;
+                }
+
+                .text123 span:nth-child(5) {
+                    animation-delay: 1s;
+                }
+
+                .text123 span:nth-child(6) {
+                    animation-delay: 1.25s;
+                }
+
+                .text123 span:nth-child(7) {
+                    animation-delay: 1.5s;
+                }
+
+                .text123 span:nth-child(8) {
+                    animation-delay: 1.75s;
+                }
+
+                .text123 span:nth-child(9) {
+                    animation-delay: 2s;
+                }
+
+        @keyframes animate {
+            0% {
+                color: #fff;
+                filter: blur(2px);
+                text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff, 0 0 200px #00b3ff, 0 0 300px #00b3ff, 0 0 400px #00b3ff;
+            }
+
+			5%,95% {
+				color: rgba(68, 68, 68, 0.55);
+				filter: blur(0px);
+				text-shadow: none;
+				/*text-shadow: 0 0 5px none;*/
+			}
+        }
+    </style>
+
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>
