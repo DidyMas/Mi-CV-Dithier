@@ -1,2 +1,2 @@
 # Mi-CV-Dithier
- mi primer portafolio
+CV actualización 2.0.0, usando Bootstrap, java script y Css3
