@@ -1000,11 +1000,21 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #f7f8f9;
-  color: #45505b;
-  font-size: 14px;
-  text-align: center;
-  padding: 30px 0;
+    background: #586a93;
+    animation: mymove 5s infinite;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    padding: 30px 0;
+}
+@keyframes mymove {
+    from {
+        background-color: #586a93;
+    }
+
+    to {
+        background-color: rgb(72,142,238);
+    }
 }
 #footer h3 {
   font-size: 36px;
