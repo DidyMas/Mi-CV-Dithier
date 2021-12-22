@@ -208,7 +208,8 @@ h1, h2, h3, h4, h5, h6 {
 */
 .mobile-nav-toggle {
   position: fixed;
-  right: 10px;
+  /*right: 10px;*/
+  left: 20px;
   top: 10px;
   z-index: 9998;
   border: 0;
@@ -1000,7 +1001,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-    background: #586a93;
+    background: #0563bb;
     animation: mymove 5s infinite;
     color: #fff;
     font-size: 14px;
@@ -1009,7 +1010,7 @@ section {
 }
 @keyframes mymove {
     from {
-        background-color: #586a93;
+        background-color: #0563bb;
     }
 
     to {
