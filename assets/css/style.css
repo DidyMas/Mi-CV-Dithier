@@ -1020,6 +1020,20 @@ section {
         background-color: rgb(72,142,238);
     }
 }
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
 #footer h3 {
   font-size: 36px;
   font-weight: 700;
