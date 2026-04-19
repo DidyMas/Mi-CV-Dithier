@@ -314,7 +314,7 @@
       slidesPerView: 1,
       spaceBetween: 24,
       pagination: {
-        el: '.certificates-pagination',
+        el: '.swiper-pagination',
         type: 'bullets',
         clickable: true
       },
