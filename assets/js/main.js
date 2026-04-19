@@ -250,6 +250,86 @@
   });
 
   /**
+   * Certificates slider
+   */
+  const certificates = [
+    "Advanced Git.pdf",
+    "AI Applied I.pdf",
+    "AI Ethics.pdf",
+    "Build ELT Pipelines in Snowflake.pdf",
+    "Build Essential Charts in Tableau Desktop.pdf",
+    "Data Modeling Core Concepts.pdf",
+    "Data Privacy & Security [All the company].pdf",
+    "Data Types and Exceptions in Java.pdf",
+    "Effective Quality Strategy.pdf",
+    "Ensure Data Accuracy and Integrity with LangChain Queries.pdf",
+    "Intermediate Git.pdf",
+    "Intermediate GitHub Concepts.pdf",
+    "Intermediate Python.pdf",
+    "Introduction to AI for Work.pdf",
+    "Introduction to Bash Scripting.pdf",
+    "Introduction to Git.pdf",
+    "Introduction to GitHub Concepts.pdf",
+    "Introduction to Shell.pdf",
+    "Introduction to Testing in Java.pdf",
+    "Jira Quick Start.pdf",
+    "Large Language Models (LLMs) Concepts.pdf",
+    "Playwright Foundations with NodeJS.pdf",
+    "Prevent Secret Exposure with Secret Scanning.pdf",
+    "Python Data Essentials- Data Structures.pdf",
+    "Python Data Essentials- Python Introduction.pdf",
+    "Software Testing and Quality Assurance- The Big Picture.pdf",
+    "Supervised Learning with scikit-learn.pdf",
+    "Understanding ChatGPT.pdf",
+    "Unsupervised Learning in Python.pdf",
+    "[AI + QA] - L3.pdf"
+  ];
+
+  const certificatesWrapper = select('.certificates-slider .swiper-wrapper');
+  if (certificatesWrapper) {
+    certificates.forEach((cert) => {
+      const slide = document.createElement('div');
+      slide.className = 'swiper-slide';
+      slide.innerHTML = `
+        <div class="certificate-item" style="padding: 24px; border-radius: 16px; background: #fff; min-height: 220px; box-shadow: 0 15px 35px rgba(0,0,0,.08); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <i class="bi bi-file-earmark-pdf-fill text-danger" style="font-size: 2.5rem;"></i>
+            <h4 class="mt-3">${cert.replace(/\.pdf$/i, '')}</h4>
+          </div>
+          <div class="mt-4">
+            <a href="assets/Cert/${encodeURIComponent(cert)}" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Ver certificado</a>
+          </div>
+        </div>
+      `;
+      certificatesWrapper.appendChild(slide);
+    });
+
+    new Swiper('.certificates-slider', {
+      speed: 600,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      slidesPerView: 1,
+      spaceBetween: 24,
+      pagination: {
+        el: '.certificates-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2
+        },
+        1200: {
+          slidesPerView: 3
+        }
+      }
+    });
+  }
+
+  /**
    * Animation on scroll
    */
   window.addEventListener('load', () => {
