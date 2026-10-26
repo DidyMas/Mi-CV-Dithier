@@ -136,209 +136,39 @@
   }
 
   /**
-   * Hero type effect
+   * Legacy template dependency removal
+   * Removed dependencies that were tied to the original MyResume starter and are not required for
+   * the current premium portfolio navigation experience:
+   * - Typed.js: removed the animated hero typewriter effect.
+   * - Waypoints: removed scroll-triggered skill progress animation.
+   * - Isotope: removed portfolio filtering and layout arrangement logic.
+   * - GLightbox: removed the portfolio/lightbox modal behavior.
+   * - Swiper: removed all slider/carousel initialization for portfolio, testimonials, and certificates.
+   * - PureCounter: removed numeric counter animation logic that was not required for the current UX.
+   *
+   * Kept functionality:
+   * - smooth scrolling between anchor links
+   * - active navigation state on scroll
+   * - mobile menu support
+   * - back-to-top button behavior
+   * - preloader cleanup
    */
-  const typed = select('.typed')
-  if (typed) {
-    let typed_strings = typed.getAttribute('data-typed-items')
-    typed_strings = typed_strings.split(',')
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
-  }
-
-  /**
-   * Skills animation
-   */
-  let skilsContent = select('.skills-content');
-  if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
-        });
-      }
-    })
-  }
-
-  /**
-   * Porfolio isotope and filter
-   */
-  window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item'
-      });
-
-      let portfolioFilters = select('#portfolio-flters li', true);
-
-      on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        portfolioIsotope.on('arrangeComplete', function() {
-          AOS.refresh()
-        });
-      }, true);
-    }
-
-  });
-
-  /**
-   * Initiate portfolio lightbox 
-   */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
-
-  /**
-   * Initiate portfolio details lightbox 
-   */
-  const portfolioDetailsLightbox = GLightbox({
-    selector: '.portfolio-details-lightbox',
-    width: '90%',
-    height: '90vh'
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
-
-  /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
-
-  /**
-   * Certificates slider
-   */
-  const certificates = [
-    "Advanced Git.pdf",
-    "AI Applied I.pdf",
-    "AI Ethics.pdf",
-    "Build ELT Pipelines in Snowflake.pdf",
-    "Build Essential Charts in Tableau Desktop.pdf",
-    "Data Modeling Core Concepts.pdf",
-    "Data Privacy & Security [All the company].pdf",
-    "Data Types and Exceptions in Java.pdf",
-    "Effective Quality Strategy.pdf",
-    "Ensure Data Accuracy and Integrity with LangChain Queries.pdf",
-    "Intermediate Git.pdf",
-    "Intermediate GitHub Concepts.pdf",
-    "Intermediate Python.pdf",
-    "Introduction to AI for Work.pdf",
-    "Introduction to Bash Scripting.pdf",
-    "Introduction to Git.pdf",
-    "Introduction to GitHub Concepts.pdf",
-    "Introduction to Shell.pdf",
-    "Introduction to Testing in Java.pdf",
-    "Jira Quick Start.pdf",
-    "Large Language Models (LLMs) Concepts.pdf",
-    "Playwright Foundations with NodeJS.pdf",
-    "Prevent Secret Exposure with Secret Scanning.pdf",
-    "Python Data Essentials- Data Structures.pdf",
-    "Python Data Essentials- Python Introduction.pdf",
-    "Software Testing and Quality Assurance- The Big Picture.pdf",
-    "Supervised Learning with scikit-learn.pdf",
-    "Understanding ChatGPT.pdf",
-    "Unsupervised Learning in Python.pdf",
-    "[AI + QA] - L3.pdf"
-  ];
-
-  const certificatesWrapper = select('.certificates-slider .swiper-wrapper');
-  if (certificatesWrapper) {
-    certificates.forEach((cert) => {
-      const slide = document.createElement('div');
-      slide.className = 'swiper-slide';
-      slide.innerHTML = `
-        <div class="certificate-item" style="padding: 24px; border-radius: 16px; background: #fff; min-height: 220px; box-shadow: 0 15px 35px rgba(0,0,0,.08); display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <i class="bi bi-file-earmark-pdf-fill text-danger" style="font-size: 2.5rem;"></i>
-            <h4 class="mt-3">${cert.replace(/\.pdf$/i, '')}</h4>
-          </div>
-          <div class="mt-4">
-            <a href="assets/Cert/${encodeURIComponent(cert)}" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Ver certificado</a>
-          </div>
-        </div>
-      `;
-      certificatesWrapper.appendChild(slide);
-    });
-
-    new Swiper('.certificates-slider', {
-      speed: 600,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-      },
-      slidesPerView: 1,
-      spaceBetween: 24,
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true
-      },
-      breakpoints: {
-        768: {
-          slidesPerView: 2
-        },
-        1200: {
-          slidesPerView: 3
-        }
-      }
-    });
-  }
 
   /**
    * Animation on scroll
+   * This remains enabled because it is not a template dependency and supports subtle motion in the
+   * final premium portfolio experience.
    */
   window.addEventListener('load', () => {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    })
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+      })
+    }
   });
+
 
 })()
